@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Spectral:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: auto;
+}
+
+body {
+  background: linear-gradient(135deg, #f4e1c1, #d9b79f);
+  background-attachment: fixed;  
+  font-family: "Spectral", serif;
+  color: #5C4033;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 20px;
+
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.audio-switch,
+.background-switch,
+.text-switch,
+.container-switch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 25px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+#audioContainer,
+#backgroundColorPickerContainer,
+#textColorPickerContainer,
+#containerColorPickerContainer {
+  display: none;
+}
+
+input#audioToggle:checked ~ #audioContainer,
+input#backgroundToggle:checked ~ #backgroundColorPickerContainer,
+input#textToggle:checked ~ #textColorPickerContainer,
+input#containerToggle:checked ~ #containerColorPickerContainer {
+  display: block;
+}
+
+#backgroundColorPicker, #textColorPicker, #containerColorPicker {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #333;
+  cursor: pointer;
+  padding: 2px;
+  transition: all 0.3s ease;
+}
+
+.letter-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px;
+  background: rgba(255, 250, 240, 0.9);
+  border: 1px solid #D1BBAA;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.content {
+  font-size: 1.2em;
+  line-height: 1.8em;
+  text-align: justify;
+  text-indent: 2em;
+}
+
+.content p:last-child {
+  text-align: right;
+  margin-top: 20px;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.5em;
+}
+
+.content span:hover {
+  color: #ff6347;
+  font-size: 1.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.profile {
+  text-align: center;
+  margin-top: 0;
+}
+
+.profile-photo {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.microphone-container {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.microphone-icon {
+  margin-bottom: 3rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.microphone-icon:hover {
+  opacity: 0.7;
+}
+
+.arrow-container {
+  position: fixed;
+  left: 2rem;
+  bottom: 0;
+  width: 200px;
+  height: 30px;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  z-index: 10;
+}
+
+.arrow {
+  color: white;
+  font-size: 30px;
+  transition: transform 1s ease-in-out;
+}
+
+.hidden-image {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  transition: height 5s ease;
+}
+
+.hidden-image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.arrow.up {
+  transform: rotate(180deg);
+}
+
+.hidden-image.show {
+  height: 180px;
+}
+
+
+/*mobil*/
+@media (max-width: 768px) {
+  .letter-container {
+    max-width: 95%;
+    padding: 25px;
+    font-size: 1em;
+  }
+
+  .header h1 {
+    font-size: 2em;
+  }
+
+  .profile-container {
+    gap: 15px;
+  }
+
+  .profile-photo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .microphone-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .arrow-container {
+    margin-top: 20px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+
+  .hidden-image {
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+
+  .hidden-image img {
+    object-fit: contain;
+  }
+  
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+  }
+
+  .audio-switch {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .background-switch,
+  .text-switch,
+  .container-switch {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .letter-container {
+    font-size: 0.9em;
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 1.8em;
+  }
+
+  .controls {
+    gap: 20px;
+  }
+}
