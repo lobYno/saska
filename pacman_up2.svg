@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 64 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <use id="Background" xlink:href="#_Image1" x="0" y="0" width="63px" height="15px"/>
-    <defs>
-        <image id="_Image1" width="63px" height="15px" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAPCAYAAABTJRdyAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAn0lEQVRIieWWwQ7AIAhD6bL//+XusMwgCrpjY48djzgDiNnBQuLzR6wsH40G0eHoo6pDSPHeJh0BwMgXjH5yADkeM7BPMPetuDgV/pp9QKyTiZdJiR9+/iS1sjcbe6PoGc/K8q7n+6mYTUsXF3pOj79dghLYkRrvyp5GrocKwA8LZafHDwnWyt9ZNT7Z8MrtcGPD0uCTG0y189iq82foAcQnyDuSY8ISAAAAAElFTkSuQmCC"/>
-    </defs>
-</svg>
